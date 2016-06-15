@@ -6,7 +6,7 @@ angular.module('myApp', [
   'ngAnimate',
   'ui.bootstrap.collapse',
   'myApp.about',
-  'myApp.view2',
+  'myApp.cv',
   'myApp.version'
 ]).
 
