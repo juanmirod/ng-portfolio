@@ -7,6 +7,7 @@ angular.module('myApp', [
   'ui.bootstrap.collapse',
   'myApp.about',
   'myApp.cv',
+  'myApp.skills',
   'myApp.version'
 ]).
 

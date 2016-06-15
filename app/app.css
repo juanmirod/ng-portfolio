@@ -1,6 +1,12 @@
 /* app css stylesheet */
 @import url('https://fonts.googleapis.com/css?family=Merriweather');
 
+@media (min-width: 768px) {
+    .pull-right-md {
+        float: right;
+    }
+}
+
 body {
   font-size: 16px;
   padding-top: 60px;
