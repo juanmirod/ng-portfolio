@@ -14,11 +14,12 @@ angular.module('myApp', [
 
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');
-
   $routeProvider.otherwise({redirectTo: '/about'});
 }]).
 
-controller('AppController', ['$scope', '$location', function($scope, $location){
-  $scope.isCollapsed = true;
-  $scope.$location = $location;
-}]);
+controller('AppController', ['$scope', '$location', 
+  function($scope, $location){
+    $scope.isCollapsed = true;
+    $scope.$location = $location;
+    $scope.employer = ($location.$$search.showcv === '1');
+  }]);
