@@ -21,5 +21,7 @@ controller('AppController', ['$scope', '$location',
   function($scope, $location){
     $scope.isCollapsed = true;
     $scope.$location = $location;
+
+    // The cv sections only show if the showcv parameter is present
     $scope.employer = ($location.$$search.showcv === '1');
   }]);
