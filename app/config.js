@@ -10,19 +10,19 @@ var profile = {
         name: 'PHP',
         level: 9,
         experience: 5,
-        bar_color: 'success'
+        bar_color: 'warning'
       },
       {
         name: 'JavaScript',
         level: 9,
         experience: 5,
-        bar_color: 'info'
+        bar_color: 'warning'
       },
       {
         name: 'Java',
         level: 6,
         experience: 2,
-        bar_color: 'danger'
+        bar_color: 'warning'
       },
       {
         name: 'Bash',
@@ -34,7 +34,13 @@ var profile = {
         name: 'Python',
         level: 2,
         experience: 0,
-        bar_color: 'default'
+        bar_color: 'warning'
+      },
+      {
+        name: 'MySQL',
+        level: 5,
+        experience: 3,
+        bar_color: 'warning'
       }
       ]
     },
@@ -46,7 +52,7 @@ var profile = {
         name: 'AngularJS',
         level: 7,
         experience: 1,
-        bar_color: 'default'
+        bar_color: 'info'
       },
       {
         name: 'jQuery',
@@ -58,31 +64,49 @@ var profile = {
         name: 'Laravel',
         level: 6,
         experience: 1,
-        bar_color: 'success'
+        bar_color: 'info'
       },
       {
         name: 'Slim',
-        level: 7,
+        level: 6,
         experience: 1,
-        bar_color: 'warning'
+        bar_color: 'info'
       },
       {
         name: 'Wordpress',
         level: 6,
         experience: 1,
-        bar_color: 'danger'
+        bar_color: 'info'
       },
       {
         name: 'Moodle',
         level: 6,
         experience: 1,
-        bar_color: 'default'
+        bar_color: 'info'
       }]
     },
 
     {
-      title: 'Other Technical Skills',
-      skills: []
+      title: 'Other Skills',
+      skills: [
+      {
+        name: 'English',
+        level: 7,
+        experience: 1,
+        bar_color: 'success', 
+      },
+      {
+        name: 'French',
+        level: 1,
+        experience: 0,
+        bar_color: 'success', 
+      },
+      {
+        name: 'Git',
+        level: 6,
+        experience: 4,
+        bar_color: 'success', 
+      }]
     }
   ]
 };

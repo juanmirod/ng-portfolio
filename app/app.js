@@ -18,6 +18,7 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
   $routeProvider.otherwise({redirectTo: '/about'});
 }]).
 
-controller('AppController', ['$scope', function($scope){
+controller('AppController', ['$scope', '$location', function($scope, $location){
   $scope.isCollapsed = true;
+  $scope.$location = $location;
 }]);

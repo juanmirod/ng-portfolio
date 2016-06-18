@@ -40,14 +40,23 @@
       <div id="navbar" class="navbar-collapse" uib-collapse="isCollapsed">
         <ul class="nav navbar-nav">
           <!-- Visible to anyone -->
-          <li class="active"><a href="#!/">about</a></li>
-          <li><a href="http://blog.juanmirodriguez.es">blog</a></li>
+          <li ng-class="{active: ($location.path() == '/about')}">
+            <a href="#!/">about</a>
+          </li>
+          <li>
+            <a href="http://blog.juanmirodriguez.es">blog</a>
+          </li>
           
           <!-- Only visible if you access with the profile/cv request param -->
-          <li><a href="#!/skills">skills</a></li>
-          <li><a href="#!/cv">cv</a></li>
-          <li><a href="#!/recomendations">recomendations</a></li>
-          <li><a href="#!/oss">oss contributions</a></li>
+          <li ng-class="{active: ($location.path() == '/cv')}">
+            <a href="#!/cv">cv</a>
+          </li>
+          <li ng-class="{active: ($location.path() == '/skills')}">
+            <a href="#!/skills">skills</a>
+          </li>
+          <li ng-class="{active: ($location.path() == '/oss')}">
+            <a href="#!/oss">oss contributions</a>
+          </li>
           
         </ul>
         <!-- I don't need this right now, but I leave it here by now...
