@@ -5,6 +5,7 @@ angular.module('myApp', [
   'ngRoute',
   'ngAnimate',
   'ui.bootstrap.collapse',
+  'ui.bootstrap.tpls',
   'myApp.about',
   'myApp.cv',
   'myApp.skills',

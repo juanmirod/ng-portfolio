@@ -1,1 +1,18 @@
-<h2>Known languages and skills</h2>
+<div class="row">
+  <h2 class="col-xs-12">Known languages and skills</h2>
+</div>
+
+<div class="row" ng-repeat="skillsgroup in skillset">
+  <div class="col-xs-12" ng-if="skillsgroup.skills.length > 0"> 
+    <h3>{{ skillsgroup.title }}</h3>
+    <div ng-repeat="skill in skillsgroup.skills">
+        <strong>{{ skill.name }}</strong>
+        <uib-progressbar 
+          class="progress"
+          max="10" 
+          value="skill.level" 
+          type="{{ skill.bar_color }}"
+        >
+    </div>
+  </div>
+</div>
