@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.cv', ['ngRoute'])
+angular.module('myApp.cv', ['ngRoute', 'ui.bootstrap.tabs'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/cv', {
