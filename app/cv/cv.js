@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.cv', ['ngRoute', 'ui.bootstrap.tabs'])
+angular.module('myApp.cv', ['ngRoute', 'ui.bootstrap.tabs', 'ui.bootstrap.popover'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/cv', {
@@ -9,6 +9,5 @@ angular.module('myApp.cv', ['ngRoute', 'ui.bootstrap.tabs'])
   });
 }])
 
-.controller('CvCtrl', [function() {
-
+.controller('CvCtrl', ['$scope', function($scope) {
 }]);
