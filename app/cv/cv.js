@@ -9,5 +9,6 @@ angular.module('myApp.cv', ['ngRoute', 'ui.bootstrap.tabs', 'ui.bootstrap.popove
   });
 }])
 
-.controller('CvCtrl', ['$scope', function($scope) {
+.controller('CvCtrl', ['$scope', '$sce', function($scope, $sce) {
+  $scope.livingindie = $sce.trustAsHtml("<p><small>sept 2015 - feb 2016</small></p><p>Development of a single page app using AngularJS.</p><p>Development of several micro sites for streaming live events.</p>");
 }]);

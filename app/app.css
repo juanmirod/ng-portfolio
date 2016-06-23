@@ -23,6 +23,10 @@ footer {
   padding-top: 40px;
 }
 
+.container {
+  overflow: hidden;
+}
+
 .timeline {
   top: 20px;
   left: 50%;
@@ -38,6 +42,22 @@ footer {
   border-radius: 7px;
   background-color: #ff0039;
   margin-left: -5px;
-  margin-top: 20px;
-  margin-bottom: 80px;
+  margin-top: 120px;
+  margin-bottom: 120px;
+}
+
+.timeline .popover {
+  width: 160px;
+  z-index: auto;
+}
+
+@media (min-width: 768px) {
+  .timeline .timeline-job {
+    margin-bottom: 80px;
+    margin-top: 90px;
+  }
+    
+  .timeline .popover {
+    width: 275px;
+  }
 }
