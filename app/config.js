@@ -2,6 +2,44 @@
 
 var profile = {
 
+  courses: [
+    {
+      year: '2016',
+      company: 'Pluralsight',
+      title: 'Hardcore functional programming in JavaScript'
+    },
+    {
+      year: '2016',
+      company: 'Pluralsight',
+      title: 'Advanced JavaScript'
+    },
+    {
+      year: '2013',
+      company: 'Agil8',
+      title: 'Real Kanban'
+    },
+    {
+      year: '2012',
+      company: 'Udacity',
+      title: 'CS-101 - Python programming course'
+    },
+    {
+      year: '2012',
+      company: 'Udacity',
+      title: 'CS-253 - Build a web searcher...'
+    },
+    {
+      year: '2009',
+      company: 'ISF',
+      title: 'Introduction to development cooperation'
+    },
+    {
+      year: '2005',
+      company: 'ASDE',
+      title: 'Free-time monitor'
+    }
+  ],
+
   jobs: [
     {
       title: 'Living Indie Tv - Front-end Developer',

@@ -10,9 +10,11 @@ angular.module('myApp.cv', ['ngRoute', 'ui.bootstrap.tabs', 'ui.bootstrap.popove
 }])
 
 .controller('CvCtrl', ['$scope', '$sce', function($scope, $sce) {
-  function addPlacement(job, index) {
+  
+  function addTpl(job, index) {
     
     job.tpl = "jobPopoverTemplate.html";
+    
     job.placement = 'right';
     if ( index%2 == 0 ) {
       job.placement = 'left';
@@ -22,5 +24,6 @@ angular.module('myApp.cv', ['ngRoute', 'ui.bootstrap.tabs', 'ui.bootstrap.popove
   }
 
   $scope.jobs = profile.jobs;
-  $scope.jobs = $scope.jobs.map(addPlacement);
+  $scope.jobs = $scope.jobs.map(addTpl);
+  $scope.courses = profile.courses;
 }]);
