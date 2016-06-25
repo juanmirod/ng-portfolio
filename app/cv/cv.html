@@ -11,6 +11,7 @@
             <h3>Front-end Developer</h3>
 
             <p>Several client-side commercial applications developed and shipped successfully. Expert knowledge of JavaScript and some different OSS frameworks. Main tasks and responsibilities:</p>
+
             <ul>
               <li>Development of single page applications using AngularJS.</li>
               <li>Custom widgets and plugins using JavaScript/HTML5/CSS3 for existing webpages.</li>
@@ -23,7 +24,7 @@
             <p>Most of the time working as full stack developer I have always tried to keep the front and the back as separated as posible, using PHP frameworks like CodeIgniter, Laravel, Slim or Symfony for custom developments. But I have also worked with Wordpress, Moodle or even Joomla.</p>
 
             <ul>
-            <li>Technical design (project architecture, deploy system, development process)</li>
+              <li>Technical design (project architecture, deploy system, development process)</li>
               <li>Development of custom web pages using OSS frameworks like CodeIgniter, Laravel, Slim.</li>
               <li>Development of micro REST APIs with Slim.</li>
               <li>Wordpress customization and custom plugins development.</li>
@@ -45,48 +46,15 @@
 
           <uib-tab index="1" heading="Timeline" ng-click="showjobs = true">
 
-            <div class="timeline">              
-              <div class="timeline-job"
-                   popover-title="Living Indie Tv - Front-end Developer"
-                   uib-popover-html="livingindie" 
+            <div class="timeline">     
+              <div class="timeline-job" ng-repeat="job in jobs"
+                   popover-title="{{ job.title }}"
+                   uib-popover-template="job.tpl" 
                    popover-is-open="showjobs"
                    popover-trigger="none"
-                   popover-placement="left">
-              </div>
-
-              <div class="timeline-job"
-                   popover-title="Euroformac - Full-stack Developer"
-                   uib-popover-html="livingindie"
-                   popover-is-open="showjobs"
-                   popover-trigger="none"
-                   popover-placement="right">
-              </div>
-
-              <div class="timeline-job"
-                   popover-title="Pure 360 Front-end Developer"
-                   uib-popover="sept 2015 - feb 2016" 
-                   popover-is-open="showjobs"
-                   popover-trigger="none"
-                   popover-placement="left">
-              </div>
-              
-              <div class="timeline-job"
-                   popover-title="Euroformac"
-                   uib-popover="sept 2015 - feb 2016" 
-                   popover-is-open="showjobs"
-                   popover-trigger="none"
-                   popover-placement="right">
-              </div>
-
-              <div class="timeline-job"
-                   popover-title="Pure 360"
-                   uib-popover="sept 2015 - feb 2016" 
-                   popover-is-open="showjobs"
-                   popover-trigger="none"
-                   popover-placement="left">
+                   popover-placement="{{ job.placement }}">
               </div>
             </div>
-
 
           </uib-tab>
 
@@ -144,3 +112,10 @@
   </div>
 
 </div> 
+
+<script type="text/ng-template" id="jobPopoverTemplate.html">
+    <div>
+      <p><small>{{ job.from_date }} - {{ job.to_date }}</small></p>
+      <p>{{ job.description }}</p>
+    </div>
+</script>

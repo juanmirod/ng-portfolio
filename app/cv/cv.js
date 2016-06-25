@@ -10,5 +10,17 @@ angular.module('myApp.cv', ['ngRoute', 'ui.bootstrap.tabs', 'ui.bootstrap.popove
 }])
 
 .controller('CvCtrl', ['$scope', '$sce', function($scope, $sce) {
-  $scope.livingindie = $sce.trustAsHtml("<p><small>sept 2015 - feb 2016</small></p><p>Development of a single page app using AngularJS.</p><p>Development of several micro sites for streaming live events.</p>");
+  function addPlacement(job, index) {
+    
+    job.tpl = "jobPopoverTemplate.html";
+    job.placement = 'right';
+    if ( index%2 == 0 ) {
+      job.placement = 'left';
+    }
+    
+    return job;
+  }
+
+  $scope.jobs = profile.jobs;
+  $scope.jobs = $scope.jobs.map(addPlacement);
 }]);
