@@ -51,14 +51,24 @@ footer {
   z-index: auto;
 }
 
-img.img-grayscale {
+.more-info-icon {
+  font-size: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  color: #ff0039;
+  cursor: pointer;
+}
+
+.logo-container {
   filter: gray; /* IE6-9 */
   filter: grayscale(1); /* Microsoft Edge and Firefox 35+ */
   -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
 }
 
 /* Disable grayscale on hover */
-img.img-grayscale:hover {
+.logo-container:hover {
   filter: none;
   -webkit-filter: grayscale(0);
 }
