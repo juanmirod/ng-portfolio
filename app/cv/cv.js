@@ -23,7 +23,13 @@ angular.module('myApp.cv', ['ngRoute', 'ui.bootstrap.tabs', 'ui.bootstrap.popove
     return job;
   }
 
+  // Always show the popovers, this is required by ui-bootstrap popovers
+  $scope.showjobs = true;
+
+  // Bind the content
   $scope.jobs = profile.jobs;
   $scope.jobs = $scope.jobs.map(addTpl);
   $scope.courses = profile.courses;
+
+  //TODO:: show the time jobs with an animation, make the timeline fit the number of jobs
 }]);
