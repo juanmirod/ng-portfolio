@@ -4,7 +4,7 @@ angular.module('myApp.cv', ['ngRoute', 'ui.bootstrap.tabs', 'ui.bootstrap.popove
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/cv', {
-    templateUrl: 'cv/cv.html',
+    templateUrl: 'views/cv/cv.html',
     controller: 'CvCtrl'
   });
 }])

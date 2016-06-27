@@ -4,7 +4,7 @@ angular.module('myApp.skills', ['ngRoute', 'ui.bootstrap.progressbar'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/skills', {
-    templateUrl: 'skills/skills.html',
+    templateUrl: 'views/skills/skills.html',
     controller: 'SkillsController'
   });
 }])

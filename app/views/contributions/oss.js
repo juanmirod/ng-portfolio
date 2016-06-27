@@ -4,7 +4,7 @@ angular.module('myApp.oss', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/oss', {
-    templateUrl: 'contributions/oss.html',
+    templateUrl: 'views/contributions/oss.html',
     controller: 'OssCtrl'
   });
 }])
