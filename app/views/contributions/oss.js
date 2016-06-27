@@ -10,5 +10,15 @@ angular.module('myApp.oss', ['ngRoute'])
 }])
 
 .controller('OssCtrl', ['$scope', function($scope) {  
+  
+}])
 
-}]);
+.directive('highlight', function() {
+  return {
+    restrict: 'A',
+    link: function(scope, element) {
+      console.log(element);
+      hljs.highlightBlock(element[0]);
+    }
+  }
+});
