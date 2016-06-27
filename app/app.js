@@ -23,5 +23,6 @@ controller('AppController', ['$scope', '$location',
     $scope.$location = $location;
 
     // The cv sections only show if the showcv parameter is present
-    $scope.employer = ($location.$$search.showcv === '1');
+    // $scope.employer = ($location.$$search.showcv === '1');
+    $scope.employer = true;
   }]);
