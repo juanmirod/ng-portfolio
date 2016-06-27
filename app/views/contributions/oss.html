@@ -1,4 +1,244 @@
 <div class="row">
   <div class="col-xs-12">
+    <h1>Open Source contributions</h1>
   </div>
+   
+  <div class="col-xs-12"> 
+
+    <h2>This portfolio</h2>
+
+    <p>This very portfolio is a single page angular application hosted in github.com. You can fork and clone the repo and create your own portfolio just modifing the html views and a config file with the content of your cv.</p>
+
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">AngularJS sample code</h3>
+      </div>
+      <div class="panel-body">
+        <pre class="pre-scrollable">
+          'use strict';
+
+          angular.module('myApp.cv', [
+            'ngRoute', 
+            'ui.bootstrap.tabs', 
+            'ui.bootstrap.popover', 
+            'ui.bootstrap.modal'
+            ])
+
+          .config(['$routeProvider', function($routeProvider) {
+            $routeProvider.when('/cv', {
+              templateUrl: 'views/cv/cv.html',
+              controller: 'CvCtrl'
+            });
+          }])
+
+          .controller('CvCtrl', ['$scope', '$sce', '$uibModal', function($scope, $sce, $uibModal) {
+            
+            function addTpl(job, index) {
+              
+              job.tpl = "jobPopoverTemplate.html";
+              
+              job.placement = 'right';
+              if ( index%2 == 0 ) {
+                job.placement = 'left';
+              }
+              
+              return job;
+            }
+
+            // enable animations on modals
+            $scope.animationsEnabled = true;
+            
+            $scope.openModal = function (company) {
+
+              var modalInstance = $uibModal.open({
+                animation: $scope.animationsEnabled,
+                templateUrl: 'teamModalContent.html',
+                controller: 'ModalInstanceCtrl',
+                size: '',
+                resolve: { 
+                  company: function(){
+                    return company;
+                  } 
+                }
+              });
+
+            };
+
+            // Always show the popovers, this is required by ui-bootstrap popovers
+            $scope.showjobs = true;
+
+            // Bind the content
+            $scope.jobs = profile.jobs;
+            $scope.jobs = $scope.jobs.map(addTpl);
+            $scope.courses = profile.courses
+            $scope.companies = profile.companies;
+
+            //TODO:: show the time jobs with an animation, make the timeline fit the number of jobs
+          }])
+
+          .controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, company) {
+
+            $scope.company = company;
+
+            $scope.cancel = function () {
+              $uibModalInstance.dismiss('cancel');
+            };
+            
+          });
+        </pre>
+      </div>
+    </div>
+
+    <h2>Wordpress/Woocommerce payment gategay</h2>
+    <p>A payment plugin that works with the Spanish Banks that use CECABANK payment. This plugin is old but it is still working and useful mainly for Spanish developers and clients, that is why the interface is in Spanish.</p>
+
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Wordpress plugin sample code</h3>
+      </div>
+      <div class="panel-body">
+        <pre class="pre-scrollable">
+          {{ cecacode }}
+        </pre>
+      </div>
+    </div>    
+
+    <h2>Contribution to Symfony Framework</h2>
+    <p>A small contribution to Symfony PHP Framework, I wanted to contribute to a big OSS project and picked one issue and worked on it. It is accepted and merged to the core.</p>
+
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">PHP sample code</h3>
+      </div>
+      <div class="panel-body">
+        <pre class="pre-scrollable">
+          [...]
+
+          /**
+           * {@inheritdoc}
+           */
+          protected function describeApplication(Application $application, array $options = array())
+          {
+              $describedNamespace = isset($options['namespace']) ? $options['namespace'] : null;
+              $description = new ApplicationDescription($application, $describedNamespace);
+              if (isset($options['raw_text']) && $options['raw_text']) {
+                  $width = $this->getColumnWidth($description->getCommands());
+                  foreach ($description->getCommands() as $command) {
+                      $this->writeText(sprintf("%-{$width}s %s", $command->getName(), $command->getDescription()), $options);
+                      $this->writeText("\n");
+                  }
+              } else {
+                  if ('' != $help = $application->getHelp()) {
+                      $this->writeText("$help\n\n", $options);
+                  }
+                  $this->writeText("<comment>Usage:</comment>\n", $options);
+                  $this->writeText("  command [options] [arguments]\n\n", $options);
+                  $this->describeInputDefinition(new InputDefinition($application->getDefinition()->getOptions()), $options);
+                  $this->writeText("\n");
+                  $this->writeText("\n");
+                  $width = $this->getColumnWidth($description->getCommands());
+                  if ($describedNamespace) {
+                      $this->writeText(sprintf('<comment>Available commands for the "%s" namespace:</comment>', $describedNamespace), $options);
+                  } else {
+                      $this->writeText('<comment>Available commands:</comment>', $options);
+                  }
+                  // add commands by namespace
+                  $commands = $description->getCommands();
+                  foreach ($description->getNamespaces() as $namespace) {
+                      if (!$describedNamespace && ApplicationDescription::GLOBAL_NAMESPACE !== $namespace['id']) {
+                          $this->writeText("\n");
+                          $this->writeText(' <comment>'.$namespace['id'].'</comment>', $options);
+                      }
+                      foreach ($namespace['commands'] as $name) {
+                          if (isset($commands[$name])) {
+                              $this->writeText("\n");
+                              $spacingWidth = $width - strlen($name);
+                              $command = $commands[$name];
+                              $commandAliases = $this->getCommandAliasesText($command);
+                              $this->writeText(sprintf('  <info>%s</info>%s%s', $name, str_repeat(' ', $spacingWidth), $commandAliases.$command->getDescription()), $options);
+                          }
+                      }
+                  }
+                  $this->writeText("\n");
+              }
+          }
+          /**
+           * {@inheritdoc}
+           */
+          private function writeText($content, array $options = array())
+          {
+              $this->write(
+                  isset($options['raw_text']) && $options['raw_text'] ? strip_tags($content) : $content,
+                  isset($options['raw_output']) ? !$options['raw_output'] : true
+              );
+          }
+          /**
+           * Formats command aliases to show them in the command description.
+           * 
+           * @param Command $command
+           * 
+           * @return string
+           */
+          private function getCommandAliasesText($command)
+          {
+              $text = '';
+              $aliases = $command->getAliases();
+              if ($aliases) {
+                  $text = '['.implode('|', $aliases).'] ';
+              }
+              return $text;
+          }
+
+          [...]
+        </pre>
+      </div>
+    </div>
+
+    <h2>PHP experimental design pattern</h2>
+    <p>Reading and learning about Redux I though that would be an interesting exercise to translate the redux pattern to PHP. This pattern is the result, submitted to PHP Design Patterns, but it is waiting for feedbad yet. Besides the naive sample implementation below, this pattern also has some tests and documentation.</p>
+
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">PHP sample code</h3>
+      </div>
+      <div class="panel-body">
+        <pre class="pre-scrollable">
+          <?php
+
+          namespace DesignPatterns\Structural\StateContainer;
+
+          class StateContainer
+          {
+              private static $state = null;
+              private static $reducer = null;
+
+              public static function init($reducer)
+              {
+                  static::$reducer = $reducer;
+                  static::$state = null;
+
+                  static::$state = call_user_func_array(static::$reducer, array(null, null));
+              }
+
+              public static function dispatch($action)
+              {
+                  if (static::$reducer == null) {
+                      throw new StoreNotInitializedException();
+                  }
+
+                  static::$state = call_user_func_array(static::$reducer, array(static::$state, $action));
+              }
+
+              public static function getState()
+              {
+                  return static::$state;
+              }
+          }
+        </pre>
+      </div>
+    </div>
+
+  </div>
+
+
 </div>
