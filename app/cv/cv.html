@@ -84,24 +84,9 @@
   <div class="col-xs-12 col-md-3">
       <h2>About the teams</h2>
       <!-- Company logos, b&W with color on hover and a + icon to show a dialog/modal with more info about the team  -->
-      <div class="logo-container">
-        <div class="more-info-icon"><span class="glyphicon glyphicon-plus-sign"></span></div>
-        <img class="img-responsive img-thumbnail img-grayscale" src="assets/img/logo-livingindie.png" alt="Pure360 logo" />
-      </div>
-      <hr>
-      <div class="logo-container">
-        <div class="more-info-icon"><span class="glyphicon glyphicon-plus-sign"></span></div>
-        <img class="img-responsive img-thumbnail img-grayscale" src="assets/img/pure-logo.svg" alt="Pure360 logo" />
-      </div>
-      <hr>
-      <div class="logo-container">
-        <div class="more-info-icon"><span class="glyphicon glyphicon-plus-sign"></span></div>
-        <img width="100%" class="img-responsive img-thumbnail img-grayscale" src="assets/img/logo-euroformac.png" alt="Pure360 logo" />
-      </div>
-      <hr>
-      <div class="logo-container">
-        <div class="more-info-icon"><span class="glyphicon glyphicon-plus-sign"></span></div>
-        <img width="100%" class="img-responsive img-thumbnail img-grayscale" src="assets/img/logo-framboise.png" alt="Pure360 logo" />
+      <div class="logo-container" ng-repeat="company in companies" ng-click="openModal(company)">
+        <img class="img-responsive img-thumbnail img-grayscale" src="assets/img/{{ company.logo }}" alt="{{ company.name }} logo" />
+        <hr>
       </div>
   </div>
 
@@ -111,5 +96,17 @@
     <div>
       <p><small>{{ job.from_date }} - {{ job.to_date }}</small></p>
       <p>{{ job.description }}</p>
+    </div>
+</script>
+
+<script type="text/ng-template" id="teamModalContent.html">
+    <div class="modal-header">
+      <h3 class="modal-title">{{ company.name }}</h3>
+    </div>
+    <div class="modal-body">
+      {{ company.description }}
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-warning" type="button" ng-click="cancel()">Close</button>
     </div>
 </script>

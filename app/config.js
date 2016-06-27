@@ -2,6 +2,34 @@
 
 var profile = {
 
+  companies: [
+    {
+      name: 'Living Indie Tv',
+      logo: 'logo-livingindie.png',
+      description: 'At Living Indie I worked remotely in a small team of three developers, one designer and three maketing and sales people. Development was relaly independent, there were no management methodology and I was used to push the project forward with regular conferences with the team and day to day email and chat communication.'
+    },
+    {
+      name: 'Euroformac',
+      logo: 'logo-euroformac.png',
+      description: 'The development team at Euroformac was a small team of three developers in charge of the new features and upgrades of a bespoke learning platform over Moodle. But this team was inside a multi-company structure of more than 20 people, a marketing agency in charge of the design, a consultancy company in charge of the servers and the Spanish Minitry of Education was the client in charge of the content. This made the project distributed, remaining mainly in online communication with monthly meetings of all the companies involved to check the big plan.'
+    },
+    {
+      name: 'Pure360',
+      logo: 'pure-logo.svg',
+      description: 'Pure360 has the biggest Front-end development team I have worked with, there were 8 developers in-house, we used kanban to keep track of the tasks and I had the opportunity to have code reviews and even do some pair programming. It was a great team experience and I learn a lot from my peers and managers.'
+    },
+    {
+      name: 'Framboise!',
+      logo: 'logo-framboise.png',
+      description: 'During the almost three years at Framboise! I was the main (and most on the time the only) developer. I was in charge of the whole lifecycle of the projects, from sketch to deploy and server maintenance, but I was helped sometimes by some freenlace developers. Having full control and responsibility over the projects is great because you can make decissions, you get the opportunity to know the client and their needs so you can be customer centered, your contribution is essencial and you know every part of the project. But a team of one person can only do that much. You have to balance your tasks every day to implement the app while you keep an eye in the server and attend company meetings or even meetings with the client.'
+    },
+    {
+      name: 'Lemonquest',
+      logo: 'logo-lemonquest.jpg',
+      description: 'At Lemonquest teams were organized around games and they shrink or grow depending on the game needs and the development stage. This allowed for a very flexible environment where everyone was important and could contribute to the game. I am proud of completing two games as lead developer at Lemonquest, with several developers working with me depending on the project.'
+    }
+  ],
+
   courses: [
     {
       year: '2016',
