@@ -31,6 +31,10 @@ footer {
   background-color: #f8f8f8;
 }
 
+.alert .label {
+  cursor: pointer;
+}
+
 .timeline {
   top: 20px;
   left: 50%;

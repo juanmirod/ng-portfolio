@@ -24,6 +24,7 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
+
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
@@ -74,10 +75,13 @@
 
   <div class="container">
 
+    <uib-alert type="warning" ng-show="showCookieAlert" close="showCookieAlert = false">
+      This page uses cookies to improve your experience <span class="label label-primary" ng-click="disableCookies()">I don't want cookies</span>
+    </uib-alert>
+
     <div ng-view>
       
     </div>
-
 
   </div>
 

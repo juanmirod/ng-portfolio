@@ -6,6 +6,7 @@ angular.module('myApp', [
   'ngAnimate',
   'ui.bootstrap.collapse',
   'ui.bootstrap.tpls',
+  'ui.bootstrap.alert',
   'myApp.about',
   'myApp.cv',
   'myApp.skills',
@@ -26,7 +27,13 @@ config(['$locationProvider', '$routeProvider', 'localStorageServiceProvider',
 controller('AppController', ['$scope', '$location', 'localStorageService', 
   function($scope, $location, localStorageService){
     $scope.isCollapsed = true;
+    $scope.showCookieAlert = true;
     $scope.$location = $location;
+
+    $scope.disableCookies = function(){
+      localStorageService.clearAll();
+      $scope.showCookieAlert = false;
+    }
 
     // The cv sections only show if the showcv parameter is present, we store the preference in localStorage
     // if this user returns typing the address he will find all the sections.
