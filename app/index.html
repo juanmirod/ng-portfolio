@@ -76,7 +76,7 @@
   <div class="container">
 
     <uib-alert type="warning" ng-show="showCookieAlert" close="showCookieAlert = false">
-      This page uses cookies to improve your experience <span class="label label-primary" ng-click="disableCookies()">I don't want cookies</span>
+      This page uses cookies to improve your experience <span class="label label-primary" ng-click="$parent.close({$event: $event})">Ok, I don't mind</span> <span class="label label-primary" ng-click="disableCookies()">I don't want cookies</span>
     </uib-alert>
 
     <div ng-view>
