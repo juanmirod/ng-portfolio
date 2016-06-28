@@ -6,12 +6,12 @@ var profile = {
     {
       name: 'Living Indie Tv',
       logo: 'logo-livingindie.png',
-      description: 'At Living Indie I worked remotely in a small team of three developers, one designer and three maketing and sales people. Development was relaly independent, there were no management methodology and I was used to push the project forward with regular conferences with the team and day to day email and chat communication.'
+      description: 'At Living Indie I worked remotely in a small team of three developers, one designer and three marketing and sales people. Development was really independent, there was no management methodology and I was used to pushing the project forward with regular conferences with the team and day to day email and chat communication.'
     },
     {
       name: 'Euroformac',
       logo: 'logo-euroformac.png',
-      description: 'The development team at Euroformac was a small team of three developers in charge of the new features and upgrades of a bespoke learning platform over Moodle. But this team was inside a multi-company structure of more than 20 people, a marketing agency in charge of the design, a consultancy company in charge of the servers and the Spanish Minitry of Education was the client in charge of the content. This made the project distributed, remaining mainly in online communication with monthly meetings of all the companies involved to check the big plan.'
+      description: 'The development team at Euroformac was a small team of three developers in charge of the new features and upgrades of a bespoke learning platform over Moodle. But this team was inside a multi-company structure of more than 20 people, a marketing agency in charge of the design, a consultancy company in charge of the servers and the Spanish Ministry of Education was the client in charge of the content. This made the project distributed, remaining mainly in online communication with monthly meetings of all the companies involved to check the big plan. '
     },
     {
       name: 'Pure360',
@@ -21,12 +21,12 @@ var profile = {
     {
       name: 'Framboise!',
       logo: 'logo-framboise.png',
-      description: 'During the almost three years at Framboise! I was the main (and most on the time the only) developer. I was in charge of the whole lifecycle of the projects, from sketch to deploy and server maintenance, but I was helped sometimes by some freenlace developers. Having full control and responsibility over the projects is great because you can make decissions, you get the opportunity to know the client and their needs so you can be customer centered, your contribution is essencial and you know every part of the project. But a team of one person can only do that much. You have to balance your tasks every day to implement the app while you keep an eye in the server and attend company meetings or even meetings with the client.'
+      description: 'During the almost three years at Framboise! I was the main (and most of the time the only) developer. I was in charge of the whole lifecycle of the projects, from sketch to deploy and server maintenance, but I was helped sometimes by some freelance developers. Having full control and responsibility for the projects is great because you can make decisions, you get the opportunity to know the client and their needs so you can be customer centred, your contribution is essential and you know every part of the project. But a team of one person can only do that much. You have to balance your tasks every day to implement the app while you keep an eye on the server and attend company meetings or even meetings with the client.'
     },
     {
       name: 'Lemonquest',
       logo: 'logo-lemonquest.jpg',
-      description: 'At Lemonquest teams were organized around games and they shrink or grow depending on the game needs and the development stage. This allowed for a very flexible environment where everyone was important and could contribute to the game. I am proud of completing two games as lead developer at Lemonquest, with several developers working with me depending on the project.'
+      description: 'At Lemonquest teams were organised around games and they shrink or grow depending on the game needs and the development stage. This allowed for a very flexible environment where everyone was important and could contribute to the game. I am proud of completing two games as lead developer at Lemonquest, with several developers working with me depending on the project.'
     }
   ],
 
@@ -71,50 +71,50 @@ var profile = {
   jobs: [
     {
       title: 'Living Indie Tv - Front-end Developer',
-      from_date: 'jan 2015',
-      to_date: 'sep 2015',
-      description: 'Development of single page app using AngularJs: music player with social features. Development of several single page microsites for live events streaming.'
+      from_date: 'Jan 2015',
+      to_date: 'Sep 2015',
+      description: 'Development of single page app using AngularJs: a music player with social features. Development of several single page microsites for live events streaming.'
     },
     {
       title: 'Euroformac - Fullstack developer',
-      from_date: 'jul 2014',
-      to_date: 'jan 2015',
+      from_date: 'Jul 2014',
+      to_date: 'Jan 2015',
       description: 'Customization, upgrade and redesign implementation over a Moodle learning platform.'
     },
     {
       title: 'Freelance web developer',
-      from_date: 'feb 2014',
-      to_date: 'jul 2014',
+      from_date: 'Feb 2014',
+      to_date: 'Jul 2014',
       description: 'Web applications architect, projects feasibility and project budget estimations, full-stack development.'
     },
     {
       title: 'Web Developer at Pure360',
-      from_date: 'sep 2013',
-      to_date: 'feb 2014',
-      description: 'Working in Pure360 back-end platform maintenance and new products development. Agile development group with great focus in team work. Back-end Development: PHP, Laravel 4, MySql. Front-end Development: AngularJs, NodeJs, Grunt, Jenkins.'
+      from_date: 'Sep 2013',
+      to_date: 'Feb 2014',
+      description: 'Working in Pure360 back-end platform maintenance and new products development. An agile development group with a great focus on teamwork. Back-end Development: PHP, Laravel 4, MySql. Front-end Development: AngularJs, NodeJs, Grunt, Jenkins.'
     },
     {
       title: 'Freelance web developer',
-      from_date: 'abr 2013',
-      to_date: 'sep 2013',
+      from_date: 'Apr 2013',
+      to_date: 'Sep 2013',
       description: 'Web applications architect, projects feasibility and project budget estimations, full-stack development.'
     },
     {
       title: 'Web developer at Framboise!',
-      from_date: 'jul 2010',
-      to_date: 'apr 2013',
+      from_date: 'Jul 2010',
+      to_date: 'Apr 2013',
       description: 'Being the only developer in a small company I was in charge of the whole life cycle of the projects, from initial concept, budget estimation, planning, development, managing outsourcing when necessary, deployment and maintenance. Main technologies: LAMP, CodeIgniter, Wordpress, JavaScript,  HTML5, CSS3. '
     },
     {
       title: 'PHP developer at CRI',
-      from_date: 'jan 2010',
-      to_date: 'jul 2010',
+      from_date: 'Jan 2010',
+      to_date: 'Jul 2010',
       description: 'Full-stack developer of custom pages using CodeIgniter. PHP scripts for automatic tasks: web crawlers, feed inspectors, web maintenance'
     },
     {
       title: 'J2ME developer at Lemonquest',
-      from_date: 'sep 2007',
-      to_date: 'aug 2009',
+      from_date: 'Sep 2007',
+      to_date: 'Aug 2009',
       description: 'Video game developer involved in the whole lifecycle of the projects.'
     }
   ],
