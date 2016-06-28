@@ -1,5 +1,6 @@
 # Juan Miguel Rodriguez Cerón Portfolio
 
+This is my personal portfolio, is public and published throught github pages, although I keep a  little hiding of some options for random folks that end up in the page.
 
 ## Creating your own portfolio
 
@@ -56,7 +57,6 @@ npm start
 ```
 
 Now browse to the app at `http://localhost:8000/index.html`.
-
 
 
 ## TODO list of nice things to add

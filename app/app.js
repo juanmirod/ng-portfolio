@@ -9,20 +9,36 @@ angular.module('myApp', [
   'myApp.about',
   'myApp.cv',
   'myApp.skills',
-  'myApp.oss'
+  'myApp.oss',
+  'LocalStorageModule'
 ]).
 
-config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-  $locationProvider.hashPrefix('!');
-  $routeProvider.otherwise({redirectTo: '/about'});
-}]).
+config(['$locationProvider', '$routeProvider', 'localStorageServiceProvider',
+  function($locationProvider, $routeProvider, localStorageServiceProvider) {
+    
+    $locationProvider.hashPrefix('!');
+    $routeProvider.otherwise({redirectTo: '/about'});
 
-controller('AppController', ['$scope', '$location', 
-  function($scope, $location){
+    localStorageServiceProvider
+      .setPrefix('juanmirodPortfolio');
+  }]).
+
+controller('AppController', ['$scope', '$location', 'localStorageService', 
+  function($scope, $location, localStorageService){
     $scope.isCollapsed = true;
     $scope.$location = $location;
 
-    // The cv sections only show if the showcv parameter is present
-    // $scope.employer = ($location.$$search.showcv === '1');
-    $scope.employer = true;
+    // The cv sections only show if the showcv parameter is present, we store the preference in localStorage
+    // if this user returns typing the address he will find all the sections.
+    if (localStorageService.get('showcv') || $location.$$search.showcv === '1') {
+    
+      localStorageService.set('showcv', true);
+      $scope.employer = true;
+    
+    } else {
+    
+      $scope.employer = false;
+    
+    }
+
   }]);
