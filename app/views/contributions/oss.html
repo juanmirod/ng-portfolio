@@ -17,76 +17,64 @@
       </div>
       <div class="panel-body">
         <pre highlight class="pre-scrollable javascript">
-          'use strict';
+      'use strict';
 
-          angular.module('myApp.cv', [
-            'ngRoute', 
-            'ui.bootstrap.tabs', 
-            'ui.bootstrap.popover', 
-            'ui.bootstrap.modal'
-            ])
+      // Declare app level module which depends on views, and components
+      angular.module('myApp', [
+        'ngRoute',
+        'ngAnimate',
+        'ui.bootstrap.collapse',
+        'ui.bootstrap.tpls',
+        'ui.bootstrap.alert',
+        'myApp.about',
+        'myApp.cv',
+        'myApp.skills',
+        'myApp.oss',
+        'LocalStorageModule'
+      ]).
 
-          .config(['$routeProvider', function($routeProvider) {
-            $routeProvider.when('/cv', {
-              templateUrl: 'views/cv/cv.html',
-              controller: 'CvCtrl'
-            });
-          }])
+      config(['$locationProvider', '$routeProvider', 'localStorageServiceProvider',
+        function($locationProvider, $routeProvider, localStorageServiceProvider) {
+          
+          $locationProvider.hashPrefix('!');
+          $routeProvider.otherwise({redirectTo: '/about'});
 
-          .controller('CvCtrl', ['$scope', '$sce', '$uibModal', function($scope, $sce, $uibModal) {
-            
-            function addTpl(job, index) {
-              
-              job.tpl = "jobPopoverTemplate.html";
-              
-              job.placement = 'right';
-              if ( index%2 == 0 ) {
-                job.placement = 'left';
-              }
-              
-              return job;
-            }
+          localStorageServiceProvider
+            .setPrefix('juanmirodPortfolio');
+        }]).
 
-            // enable animations on modals
-            $scope.animationsEnabled = true;
-            
-            $scope.openModal = function (company) {
+      controller('AppController', ['$scope', '$location', 'localStorageService', 
+        function($scope, $location, localStorageService){
+          
+          $scope.isCollapsed = true;
+          $scope.showCookieAlert = true;
+          $scope.$location = $location;
 
-              var modalInstance = $uibModal.open({
-                animation: $scope.animationsEnabled,
-                templateUrl: 'teamModalContent.html',
-                controller: 'ModalInstanceCtrl',
-                size: '',
-                resolve: { 
-                  company: function(){
-                    return company;
-                  } 
-                }
-              });
+          $scope.disableCookies = function(){
+            localStorageService.clearAll();
+            $scope.showCookieAlert = false;
+          }
 
-            };
-
-            // Always show the popovers, this is required by ui-bootstrap popovers
-            $scope.showjobs = true;
-
-            // Bind the content
-            $scope.jobs = profile.jobs;
-            $scope.jobs = $scope.jobs.map(addTpl);
-            $scope.courses = profile.courses
-            $scope.companies = profile.companies;
-
-            //TODO:: show the time jobs with an animation, make the timeline fit the number of jobs
-          }])
-
-          .controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, company) {
-
-            $scope.company = company;
-
-            $scope.cancel = function () {
-              $uibModalInstance.dismiss('cancel');
-            };
-            
+          // Every time the user changes the view, we must collapse the menu
+          $scope.$on('$routeChangeStart', function(){
+            $scope.isCollapsed = true;
           });
+
+          // The cv sections only show if the showcv parameter is present, we store the preference in localStorage
+          // if this user returns typing the address he will find all the sections.
+          if (localStorageService.get('showcv') || $location.$$search.showcv === '1') {
+          
+            localStorageService.set('showcv', true);
+            $scope.employer = true;
+          
+          } else {
+          
+            $scope.employer = false;
+          
+          }
+
+        }]);
+
         </pre>
       </div>
     </div>

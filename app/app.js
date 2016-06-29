@@ -26,6 +26,7 @@ config(['$locationProvider', '$routeProvider', 'localStorageServiceProvider',
 
 controller('AppController', ['$scope', '$location', 'localStorageService', 
   function($scope, $location, localStorageService){
+    
     $scope.isCollapsed = true;
     $scope.showCookieAlert = true;
     $scope.$location = $location;
@@ -34,6 +35,11 @@ controller('AppController', ['$scope', '$location', 'localStorageService',
       localStorageService.clearAll();
       $scope.showCookieAlert = false;
     }
+
+    // Every time the user changes the view, we must collapse the menu
+    $scope.$on('$routeChangeStart', function(){
+      $scope.isCollapsed = true;
+    });
 
     // The cv sections only show if the showcv parameter is present, we store the preference in localStorage
     // if this user returns typing the address he will find all the sections.
