@@ -17,10 +17,7 @@ angular.module('myApp', [
 config(['$locationProvider', '$routeProvider', 'localStorageServiceProvider',
   function($locationProvider, $routeProvider, localStorageServiceProvider) {
     
-    //$locationProvider.hashPrefix('!');
-    $locationProvider.html5Mode({
-        enabled:true
-    });
+    $locationProvider.hashPrefix('!');
     $routeProvider.otherwise({redirectTo: '/about'});
 
     localStorageServiceProvider
