@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>Juan Miguel Rodríguez Cerón</title>
+  <meta name="description" content="Full-stack web developer personal web, cv and portfolio.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="JMRC Personal website"/>
+  <meta property="og:image" content="https://www.flickr.com/photos/jchieimages/15682122443/"/>
+  <meta property="og:site_name" content="Juan Miguel Rodriguez Cerón"/>
+  <meta property="og:description" content="Full-stack web developer personal web, cv and portfolio."/>
+  
+  <!-- Bootstrap 3 Cosmo theme -->
+  <link rel="stylesheet" href="app/bower_components/bootswatch-dist/css/bootstrap.css">
+  <link rel="stylesheet" href="app/bower_components/highlightjs/styles/github.css">
+  
+  <link rel="stylesheet" href="app/app.css">
+</head>
+<body ng-controller="AppController">
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" 
+                class="navbar-toggle collapsed"
+                ng-click="isCollapsed = !isCollapsed" 
+                aria-expanded="false" 
+                aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">JMRC</a>
+      </div>
+      <div id="navbar" class="navbar-collapse" uib-collapse="isCollapsed">
+        <ul class="nav navbar-nav">
+          <!-- Visible to anyone -->
+          <li ng-class="{active: ($location.path() == '/about')}">
+            <a href="#!/">about</a>
+          </li>
+          <li>
+            <a href="http://blog.juanmirodriguez.es">blog</a>
+          </li>
+          
+          <!-- Only visible if you access with the profile/cv request param -->
+          <li ng-if="employer" 
+              ng-class="{active: ($location.path() == '/cv')}">
+            <a href="#!/cv">cv</a>
+          </li>
+          <li ng-if="employer" 
+              ng-class="{active: ($location.path() == '/skills')}">
+            <a href="#!/skills">skills</a>
+          </li>
+          <li ng-if="employer" 
+              ng-class="{active: ($location.path() == '/oss')}">
+            <a href="#!/oss">oss contributions</a>
+          </li>
+          
+        </ul>
+        <!-- I don't need this right now, but I leave it here by now...
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="../navbar/">Default</a></li>
+          <li><a href="../navbar-static-top/">Static top</a></li>
+          <li class="active"><a href="./">Fixed top <span class="sr-only">(current)</span></a></li>
+        </ul>
+        -->
+      </div><!--/.nav-collapse -->
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <uib-alert type="warning" ng-show="showCookieAlert" close="showCookieAlert = false">
+      This page uses cookies to improve your experience <br class="visible-xs-block"> <span class="label label-primary" ng-click="$parent.close({$event: $event})">Ok, I don't mind</span> <span class="label label-primary" ng-click="disableCookies()">I don't want cookies</span>
+    </uib-alert>
+
+    <div ng-view>
+      
+    </div>
+
+  </div>
+
+  <footer class="container">
+    <div class="row">
+      <div class="col-md-6">
+      <p>This page is statically hosted at github.com. The source code is open, you can find more information and fork the repository <a href="https://github.com/juanmirod/ng-portfolio">here</a>. Made with <span class="text-danger glyphicon glyphicon-heart"></span> by <a href="https://github.com/juanmirod">juanmirod</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="app/bower_components/angular/angular.js"></script>
+  <script src="app/bower_components/angular-animate/angular-animate.js"></script>
+  <script src="app/bower_components/angular-route/angular-route.js"></script>
+  <script src="app/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="app/bower_components/highlightjs/highlight.pack.js"></script>
+  <script src="app/bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
+  <script src="app/config.js"></script>
+  <script src="app/app.js"></script>
+  <script src="app/views/about/about.js"></script>
+  <script src="app/views/cv/cv.js"></script>
+  <script src="app/views/skills/skills.js"></script>
+  <script src="app/views/contributions/oss.js"></script>
+</body>
+</html>
