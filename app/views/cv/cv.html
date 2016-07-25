@@ -10,7 +10,7 @@
      Specialised on Javascript and PHP, I have worked with many different teams and codebases in this two languages and I feel confident that I can be a meaningful member of any team and debug, maintain and improve any code base. To find more about shipped projects and employers recommendations you can <a href="https://www.linkedin.com/in/juanmirodriguez">connect with me on LinkedIn</a>. Here you can find a relation of the different roles I have played over the years and a relation of usual tasks and accomplishments. 
      </p>
 
-      <uib-tabset active="0">
+      <uib-tabset active="0" class="hidden-print">
 
         <uib-tab index="0" heading="Timeline" ng-if="jobs.length > 0">
 
@@ -86,11 +86,12 @@
     </div>
   </div>
 
-  <div class="col-xs-12 col-sm-5 col-md-3">
+  <div class="col-xs-12 col-md-3">
       <h2>About the teams</h2>
-      <!-- Company logos, b&W with color on hover and a + icon to show a dialog/modal with more info about the team  -->
       <div class="logo-container" ng-repeat="company in companies" ng-click="openModal(company)">
-        <img class="img-responsive img-thumbnail img-grayscale" src="assets/img/{{ company.logo }}" alt="{{ company.name }} logo" />
+        <h3 class="visible-print-block">{{ company.name }}</h3>
+        <img class="hidden-print img-responsive img-thumbnail img-grayscale" src="assets/img/{{ company.logo }}" alt="{{ company.name }} logo" />
+        <p class="visible-print-block">{{ company.description }}</p>
         <hr>
       </div>
   </div>
