@@ -1,0 +1,9 @@
+<div class="timeline">     
+  <div class="timeline-job" ng-repeat="job in jobs"
+       popover-title="{{ job.title }}"
+       uib-popover-template="job.tpl" 
+       popover-is-open="showjobs"
+       popover-trigger="none"
+       popover-placement="{{ job.placement }}">
+  </div>
+</div>

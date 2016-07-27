@@ -14,7 +14,8 @@ angular.module('myApp.cv', [
   });
 }])
 
-.controller('CvCtrl', ['$scope', '$sce', '$uibModal', function($scope, $sce, $uibModal) {
+.controller('CvCtrl', ['$scope', '$sce', '$uibModal', '$window', 
+  function($scope, $sce, $uibModal, $window) {
   
   function addTpl(job, index) {
     
@@ -55,6 +56,10 @@ angular.module('myApp.cv', [
   $scope.jobs = $scope.jobs.map(addTpl);
   $scope.courses = profile.courses
   $scope.companies = profile.companies;
+
+  $scope.print = function(){
+    $window.print();
+  }
 
   //TODO:: show the time jobs with an animation, make the timeline fit the number of jobs
 }])

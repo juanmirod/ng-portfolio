@@ -23,6 +23,10 @@ footer {
   padding-top: 40px;
 }
 
+.print-icon {
+  float: left;
+}
+
 .container {
   overflow: hidden;
 }
@@ -114,9 +118,45 @@ footer {
 }
 
 @media print {
+
+  .h1 {
+    margin-top: -20px;
+  }
+
   .logo-container {
     filter: none;
     -webkit-filter: grayscale(0);
   }
+
+  .alert {
+    display: none;
+  }
+
+  .timeline {
+    top: 10px;
+    left: 10px;
+    width: 100%;
+    margin: 0px;
+    background: #d7e4ed;
+  }
+
+  .timeline .timeline-job {
+    margin: 0px;
+    position:relative;
+    width: 100%;
+  }
+
+  .timeline .popover {
+    width: 100%;
+    max-width: 100%;
+    margin: 0px;
+    position: relative;
+    z-index: auto;
+  }
+
+  .timeline .popover.left .arrow, .timeline .popover.right .arrow{
+    display: none;
+  }
+
 }
 

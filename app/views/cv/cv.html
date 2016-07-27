@@ -1,5 +1,5 @@
 <div class="row">
-  <h1 class="col-xs-12">CV</h1>
+  <h1 class="col-xs-12">CV <div ng-click="print()" class="btn btn-link btn-xs hidden-print">print this document <span class="glyphicon glyphicon-floppy-save"></span></div></h1>
   
   <div class="col-xs-12 col-md-9">
  
@@ -10,61 +10,28 @@
      Specialised on Javascript and PHP, I have worked with many different teams and codebases in this two languages and I feel confident that I can be a meaningful member of any team and debug, maintain and improve any code base. To find more about shipped projects and employers recommendations you can <a href="https://www.linkedin.com/in/juanmirodriguez">connect with me on LinkedIn</a>. Here you can find a relation of the different roles I have played over the years and a relation of usual tasks and accomplishments. 
      </p>
 
-      <uib-tabset active="0" class="hidden-print">
+    <uib-tabset active="0" class="hidden-print">
 
-        <uib-tab index="0" heading="Timeline" ng-if="jobs.length > 0">
+      <uib-tab index="0" heading="Timeline" ng-if="jobs.length > 0">
 
-          <div class="timeline">     
-            <div class="timeline-job" ng-repeat="job in jobs"
-                 popover-title="{{ job.title }}"
-                 uib-popover-template="job.tpl" 
-                 popover-is-open="showjobs"
-                 popover-trigger="none"
-                 popover-placement="{{ job.placement }}">
-            </div>
-          </div>
+        <ng-include src="'views/cv/timeline.html'"></ng-include>
 
-        </uib-tab>
+      </uib-tab>
 
-        <uib-tab index="1" heading="by Job Title">
+      <uib-tab index="1" heading="by Job Title">
 
-          <h3>Front-end Developer</h3>
+        <ng-include src="'views/cv/roles.html'"></ng-include>
+        
+      </uib-tab>
 
-          <p>Several client-side commercial applications developed and shipped successfully. Expert knowledge of JavaScript and some different OSS frameworks. Main tasks and responsibilities:</p>
+    </uib-tabset>
 
-          <ul>
-            <li>Development of single page applications using AngularJS.</li>
-            <li>Custom widgets and plugins using JavaScript/HTML5/CSS3 for existing webpages.</li>
-            <li>PSD to HTML design implementations. Implementation of new layouts and components adhering to previous designs convention and style.</li>
-            <li>Development of prototypes and MVPs without designer assistance using CSS frameworks like Bootstrap and Foundation.</li>
-          </ul>
-
-          <h3>Back-end Developer</h3>
-
-          <p>Most of the time working as full stack developer I have always tried to keep the front and the back as separated as possible, using PHP frameworks like CodeIgniter, Laravel, Slim or Symfony for custom developments. But I have also worked with Wordpress, Moodle or even Joomla.</p>
-
-          <ul>
-            <li>Technical design (project architecture, deploy system, development process)</li>
-            <li>Development of custom web pages using OSS frameworks like CodeIgniter, Laravel, Slim.</li>
-            <li>Development of micro REST APIs with Slim.</li>
-            <li>Wordpress customization and custom plugins development.</li>
-            <li>Moodle customization and modules development.</li>
-          </ul>
-
-          <h3>Video games developer</h3>
-
-          <p>Video games are quite a different job that the usual enterprise development, the focus is mainly on presentation, interfaces and real-time interaction. Video games development is interesting because it makes you focus on different problems and find different approaches. I have worked as video game developer and shipped several games and I keep doing some video game development in my spare time.</p>
-
-          <ul>
-            <li>Video game 2D engine development.</li>
-            <li>Interfaces development.</li>
-            <li>Planning and schedule of development tasks.</li>
-            <li>Translation, reskinning and porting of mobile games.</li>
-          </ul>
-
-        </uib-tab>
-
-      </uib-tabset>
+    <div class="hidden visible-print">
+      <h3>Responsibilities and achievements by role</h3>
+      <ng-include src="'views/cv/roles.html'"></ng-include>      
+      <h3>Jobs sorted by date</h3>
+      <ng-include src="'views/cv/timeline.html'"></ng-include>
+    </div>
     
     <h2>Academic Education</h2>
 
@@ -87,7 +54,7 @@
   </div>
 
   <div class="col-xs-12 col-md-3">
-      <h2>About the teams</h2>
+      <h2>More about the teams</h2>
       <div class="logo-container" ng-repeat="company in companies" ng-click="openModal(company)">
         <h3 class="visible-print-block">{{ company.name }}</h3>
         <img class="hidden-print img-responsive img-thumbnail img-grayscale" src="assets/img/{{ company.logo }}" alt="{{ company.name }} logo" />
